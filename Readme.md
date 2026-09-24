@@ -1,3 +1,4 @@
+# This markdown file is just for the usage of the project viewers and not for any AI agent
 # Step-by-Step: From `git init` to Running Project
 
 **Mental model first:** *You* only create folders and markdown files. Claude Code creates all the actual code (package.json, React app, Express app) during Phase 1. Don't scaffold anything manually — that's the agent's job.
