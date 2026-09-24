@@ -15,13 +15,13 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 ## Phase 2 — Design system + animation toolkit
 
-- [ ] P2.1 Tokens in styles/index.css per docs/05 (dark + light); fonts via @fontsource
-- [ ] P2.2 useTheme + usePrefersReducedMotion hooks; ThemeToggle (A15) persisted
-- [ ] P2.3 Motion primitives: Reveal, Stagger, GradientOrbs, ScrollProgress (A2, A4–A7)
-- [ ] P2.4 Motion primitives: Typewriter, Counter, TiltCard, MagneticButton, Marquee (A3, A8–A11)
-- [ ] P2.5 UI primitives: Button, Tag, SectionHeading, Card (micro-interactions per docs/05)
-- [ ] P2.6 Dev-only `/dev` showcase page rendering every primitive (clearly labeled, linked in footer during dev)
-- [ ] P2.7 Verify: showcase page demonstrates all animations; reduced-motion toggle disables them
+- [x] P2.1 Tokens in styles/index.css per docs/05 (dark + light); fonts via @fontsource
+- [x] P2.2 useTheme + usePrefersReducedMotion hooks; ThemeToggle (A15) persisted
+- [x] P2.3 Motion primitives: Reveal, Stagger, GradientOrbs, ScrollProgress (A2, A4–A7)
+- [x] P2.4 Motion primitives: Typewriter, Counter, TiltCard, MagneticButton, Marquee (A3, A8–A11)
+- [x] P2.5 UI primitives: Button, Tag, SectionHeading, Card (micro-interactions per docs/05)
+- [x] P2.6 Dev-only `/dev` showcase page rendering every primitive (clearly labeled, linked in footer during dev)
+- [x] P2.7 Verify: showcase page demonstrates all animations; reduced-motion toggle disables them
 
 ## Phase 3 — Content layer
 
