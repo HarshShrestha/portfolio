@@ -11,7 +11,7 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 - [x] P1.1 Vite + React + TS at repo root; Tailwind wired; react-router-dom (`/` + `*`); favicon.svg
 - [x] P1.2 ESLint + Prettier; scripts `dev/test/lint/build/preview`; zero violations
 - [x] P1.3 Vitest + RTL; one smoke test (App renders heading); build passes
-- [ ] P1.4 Verify: `npm run dev` boots; page renders; `npm test` green
+- [x] P1.4 Verify: `npm run dev` boots; page renders; `npm test` green
 
 ## Phase 2 — Design system + animation toolkit
 
