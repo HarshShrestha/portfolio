@@ -9,6 +9,10 @@ import { Counter } from '../components/motion/Counter';
 import { TiltCard } from '../components/motion/TiltCard';
 import { MagneticButton } from '../components/motion/MagneticButton';
 import { Marquee } from '../components/motion/Marquee';
+import { Button } from '../components/ui/Button';
+import { Tag } from '../components/ui/Tag';
+import { SectionHeading } from '../components/ui/SectionHeading';
+import { Card } from '../components/ui/Card';
 
 const Home: React.FC = () => {
   return (
@@ -33,13 +37,18 @@ const Home: React.FC = () => {
         </Stagger>
 
         <MagneticButton className="mt-4">
-          <button className="px-6 py-3 bg-accent text-bg font-bold rounded-full">
+          <Button variant="primary" size="lg">
             Get in touch
-          </button>
+          </Button>
         </MagneticButton>
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen gap-12">
+        <SectionHeading
+          number="01"
+          title="Stats"
+          subtitle="A quick glimpse into my journey"
+        />
         <div className="flex gap-8">
           <Counter value={10} className="text-6xl font-bold text-accent" />
           <Counter value={50} className="text-6xl font-bold text-accent" />
@@ -47,20 +56,28 @@ const Home: React.FC = () => {
         </div>
 
         <TiltCard className="p-1 bg-gradient-to-br from-accent to-accent-2 rounded-card">
-          <div className="bg-surface p-8 rounded-card text-text max-w-sm text-center">
+          <Card>
             <h2 className="text-2xl font-bold mb-4">Tilt Card</h2>
-            <p>Hover over me to see the 3D tilt effect!</p>
-          </div>
+            <p className="text-muted">Hover over me to see the 3D tilt effect!</p>
+            <div className="flex gap-2 mt-4">
+              <Tag variant="accent">React</Tag>
+              <Tag variant="muted">Framer Motion</Tag>
+            </div>
+          </Card>
         </TiltCard>
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen gap-8">
-        <h2 className="text-3xl font-bold text-text">My Tech Stack</h2>
+        <SectionHeading
+          number="02"
+          title="Tech Stack"
+          subtitle="Tools and languages I use to build the web"
+        />
         <Marquee className="w-full">
           {['React', 'TypeScript', 'Tailwind', 'Node.js', 'Next.js', 'Python', 'Go', 'Rust'].map(tech => (
-            <span key={tech} className="px-4 py-2 bg-surface border border-border rounded-full text-muted font-mono">
+            <Tag key={tech} variant="muted" className="px-4 py-2">
               {tech}
-            </span>
+            </Tag>
           ))}
         </Marquee>
       </div>
