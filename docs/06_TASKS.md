@@ -1,68 +1,69 @@
-# TASKS.md — execution engine
+# TASKS.md — execution engine (static build)
 
 ## Protocol
+
 Work the first unchecked task of the earliest incomplete phase (unless given an ID).
 Per task: plan → implement → verify → tick box → commit (`P<phase>.<task>: <summary>`).
-**Definition of Done (every task):** lint clean · tests pass · build passes · box ticked · committed.
+**DoD (every task):** lint clean · tests pass · `npm run build` passes · box ticked · committed.
 
-- [x] P1.1 Root: `package.json` with scripts `dev`/`test`/`lint` (npm --prefix both apps), `.gitignore`
-- [ ] P1.2 `server/`: Express + helmet + cors + morgan, `GET /api/health`, env config, `.env.example`
-- [ ] P1.3 `client/`: Vite + React + Tailwind + react-router, `/api` proxy to :5000, `.env.example`
-- [ ] P1.4 ESLint + Prettier in both apps; zero violations
-- [ ] P1.5 Verify both apps boot; health check returns ok
+## Phase 1 — Scaffold
 
-## Phase 2 — Data layer & public API
-- [ ] P2.1 Mongoose connection with clear fatal-error logging
-- [ ] P2.2 Models: Profile, Project, Skill, Message, Admin (per docs/03)
-- [ ] P2.3 `scripts/seed.js`: idempotent upserts of ALL seed content; bootstraps admin from env
-- [ ] P2.4 Routes+controllers: GET /profile, /projects, /projects/:slug, /skills
-- [ ] P2.5 POST /messages: Zod validation, rate limit, generic 201 response
-- [ ] P2.6 ApiError class, async wrapper, central error middleware, 404 handler
-- [ ] P2.7 Supertest suite (mongodb-memory-server): happy path + validation + 404
-- [ ] P2.8 Verify: seed local Mongo, curl every endpoint
+- [x] P1.1 Vite + React + TS at repo root; Tailwind wired; react-router-dom (`/` + `*`); favicon.svg
+- [x] P1.2 ESLint + Prettier; scripts `dev/test/lint/build/preview`; zero violations
+- [x] P1.3 Vitest + RTL; one smoke test (App renders heading); build passes
+- [x] P1.4 Verify: `npm run dev` boots; page renders; `npm test` green
 
-## Phase 3 — Admin API
-- [ ] P3.1 POST /admin/login: bcrypt verify → signed JWT (12h); generic 401 on failure
-- [ ] P3.2 requireAuth middleware; all /admin routes except login protected
-- [ ] P3.3 Project CRUD (create/read-all/update/delete)
-- [ ] P3.4 Messages: list (+?unread), PATCH read, DELETE
-- [ ] P3.5 Tests: auth success, auth failures (no token / bad token), CRUD round-trip
+## Phase 2 — Design system + animation toolkit
 
-## Phase 4 — Frontend foundation
-- [ ] P4.1 Tailwind tokens per docs/05; dark default + toggle persisted in localStorage
-- [ ] P4.2 @fontsource fonts (Space Grotesk, Inter, JetBrains Mono); favicon
-- [ ] P4.3 Layout: Navbar (sticky, anchors) + Footer (email, socials)
-- [ ] P4.4 Primitives: Button, SectionHeading, Tag, Card, Skeleton, ErrorState
-- [ ] P4.5 `services/api.js` + `useApi` hook + fallback to `data/content.json` (from docs/03 seed)
-- [ ] P4.6 Verify: navigable shell, theme persists, fallback works with server off
+- [ ] P2.1 Tokens in styles/index.css per docs/05 (dark + light); fonts via @fontsource
+- [ ] P2.2 useTheme + usePrefersReducedMotion hooks; ThemeToggle (A15) persisted
+- [ ] P2.3 Motion primitives: Reveal, Stagger, GradientOrbs, ScrollProgress (A2, A4–A7)
+- [ ] P2.4 Motion primitives: Typewriter, Counter, TiltCard, MagneticButton, Marquee (A3, A8–A11)
+- [ ] P2.5 UI primitives: Button, Tag, SectionHeading, Card (micro-interactions per docs/05)
+- [ ] P2.6 Dev-only `/dev` showcase page rendering every primitive (clearly labeled, linked in footer during dev)
+- [ ] P2.7 Verify: showcase page demonstrates all animations; reduced-motion toggle disables them
 
-## Phase 5 — Pages
-- [ ] P5.1 Hero: name, role, headline, CTAs (View projects / Contact), mono accent detail
-- [ ] P5.2 About: summary + education card (GPA, coursework)
-- [ ] P5.3 Skills: grouped grid
-- [ ] P5.4 Projects: 3 featured cards → `/projects/:slug` detail (tagline, highlights, stack, links)
-- [ ] P5.5 Certifications strip
-- [ ] P5.6 Contact: form → POST /api/messages, inline success/error; socials row
-- [ ] P5.7 404 page
-- [ ] P5.8 Verify: matches docs/05; responsive 360/768/1280
+## Phase 3 — Content layer
 
-## Phase 6 — Integration & polish
-- [ ] P6.1 Loading/empty/error states on every data section
-- [ ] P6.2 SEO: per-page titles/descriptions, OG tags, canonical, robots.txt
-- [ ] P6.3 A11y pass: contrast, focus rings, aria labels, keyboard nav, reduced motion
-- [ ] P6.4 Lighthouse mobile ≥ 90 across the board; fix findings
-- [ ] P6.5 Full manual pass; log results in this file
+- [ ] P3.1 `src/data/profile.ts` with types, EXACTLY per docs/03
+- [ ] P3.2 Data-integrity test: every project ≥3 highlights + ≥3 tech + unique slug; stats have labels; no TODO left in final data test (TODOs allowed until P7)
+- [ ] P3.3 Verify: test green; content diffed against docs/03 line by line
 
-## Phase 7 — Admin panel
-- [ ] P7.1 `/admin` login page; store token; handle 401 (redirect to login)
-- [ ] P7.2 Dashboard: project CRUD forms + message inbox (unread badge, mark read, delete)
-- [ ] P7.3 Route guard + optimistic UI confirmations
-- [ ] P7.4 Verify: full CRUD against local DB
+## Phase 4 — Shell: Background, Navbar, Hero, Footer
 
-## Phase 8 — Deploy (per docs/07)
-- [ ] P8.1 Server Dockerfile + .dockerignore; docker-compose (api + mongo) for local
-- [ ] P8.2 Atlas cluster + production seed; Render service with env vars
-- [ ] P8.3 Vercel client deploy; set VITE_API_BASE_URL; update CLIENT_ORIGIN CORS
-- [ ] P8.4 GitHub Actions CI: lint + test both apps on every PR
-- [ ] P8.5 Post-deploy smoke: health, contact form E2E, admin login
-- [ ] P8.6 (Optional) custom domain 
+- [ ] P4.1 Layout Background: orbs + grid + noise (aria-hidden, fixed, behind content)
+- [ ] P4.2 Navbar: sticky glass, anchors, scroll-spy + NavUnderline (A12), ScrollProgress (A5), ThemeToggle
+- [ ] P4.3 Hero: staggered entrance (A2), gradient name, Typewriter roles (A3), CTAs (MagneticButton), ParallaxHero (A17), ScrollCue (A18)
+- [ ] P4.4 Stats strip: glass band, 4 Counters (A8)
+- [ ] P4.5 Footer: email, socials, "Built with React + Tailwind", /dev link (dev only)
+- [ ] P4.6 Verify: 360/768/1280 screenshots-checked; reduced-motion pass
+
+## Phase 5 — Content sections
+
+- [ ] P5.1 About: summary + quick facts (location, email, phone)
+- [ ] P5.2 Education: Timeline (A13) with coursework pills
+- [ ] P5.3 Skills: Marquee rows (A11) + category grid
+- [ ] P5.4 Certifications strip
+- [ ] P5.5 Verify: all reveals fire once; no layout shift on load
+
+## Phase 6 — Projects + Contact
+
+- [ ] P6.1 Projects grid: TiltCards (A9) with CSS-art headers per accent + Stagger entrance
+- [ ] P6.2 Project modal (A16): full highlights, tech tags, links; Esc/backdrop close; scroll-lock
+- [ ] P6.3 Contact: CopyEmail (A14), phone, socials (magnetic), Download Résumé button → /resume.pdf
+- [ ] P6.4 Verify: keyboard opens/closes modal; copy works; focus states visible
+
+## Phase 7 — Polish & hardening
+
+- [ ] P7.1 Remove `/dev` route + DevShowcase; footer dev link removed
+- [ ] P7.2 Replace TODO project repo links (I provide URLs); remove TODO allowance from P3.2 test
+- [ ] P7.3 SEO: index.html title/description, OG/Twitter tags, theme-color, robots.txt; 404 page styled
+- [ ] P7.4 A11y audit: contrast, focus rings, aria-labels, tab order, reduced-motion full-site pass
+- [ ] P7.5 Lighthouse mobile: Perf ≥ 85, A11y/BP/SEO ≥ 95; fix all findings
+- [ ] P7.6 Full manual pass; record results here
+
+## Phase 8 — Deploy (docs/07)
+
+- [ ] P8.1 GitHub Actions CI: lint + test + build on every push/PR
+- [ ] P8.2 Deploy to Vercel; verify prod URL, fonts, animations, 404
+- [ ] P8.3 (Optional) custom domain + real screenshots if I supply any

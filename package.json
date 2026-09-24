@@ -1,14 +1,42 @@
 {
   "name": "portfolio",
-  "version": "1.0.0",
-  "description": "MERN Personal Portfolio",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
-    "test": "npm test --prefix server && npm test --prefix client",
-    "lint": "npm run lint --prefix server && npm run lint --prefix client"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --max-warnings 0",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.70.1",
+    "@typescript-eslint/parser": "^8.70.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.12.0",
+    "jsdom": "^30.1.1",
+    "postcss": "^8.4.38",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.2.2",
+    "typescript-eslint": "^8.70.1",
+    "vite": "^5.2.8",
+    "vitest": "^1.6.1"
   }
 }
