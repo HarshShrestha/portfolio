@@ -13,6 +13,7 @@ import { Button } from '../components/ui/Button';
 import { Tag } from '../components/ui/Tag';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Card } from '../components/ui/Card';
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   return (
@@ -20,7 +21,10 @@ const Home: React.FC = () => {
       <ScrollProgress />
       <GradientOrbs />
 
-      <div className="absolute top-4 right-4 z-10">
+      <div className="absolute top-4 right-4 z-10 flex gap-2">
+        <Link to="/dev" className="px-3 py-1 text-xs font-mono text-muted border border-border rounded-full hover:text-accent hover:border-accent transition-colors">
+          /dev
+        </Link>
         <ThemeToggle />
       </div>
 
