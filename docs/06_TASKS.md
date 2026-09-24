@@ -17,7 +17,7 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 - [x] P2.1 Tokens in styles/index.css per docs/05 (dark + light); fonts via @fontsource
 - [x] P2.2 useTheme + usePrefersReducedMotion hooks; ThemeToggle (A15) persisted
-- [ ] P2.3 Motion primitives: Reveal, Stagger, GradientOrbs, ScrollProgress (A2, A4–A7)
+- [x] P2.3 Motion primitives: Reveal, Stagger, GradientOrbs, ScrollProgress (A2, A4–A7)
 - [ ] P2.4 Motion primitives: Typewriter, Counter, TiltCard, MagneticButton, Marquee (A3, A8–A11)
 - [ ] P2.5 UI primitives: Button, Tag, SectionHeading, Card (micro-interactions per docs/05)
 - [ ] P2.6 Dev-only `/dev` showcase page rendering every primitive (clearly labeled, linked in footer during dev)
