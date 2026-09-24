@@ -8,15 +8,15 @@ anything not listed there. Do not change scope without asking.
 
 ## Stack
 
-| Concern    | Choice                                                  |
-|------------|----------------------------------------------------------|
-| Framework  | React 18 + Vite + **TypeScript**                         |
-| Styling    | Tailwind (v4 CSS-first via `@theme`, or v3 config — pick one, stay consistent) |
-| Animation  | framer-motion (only animation library)                   |
-| Icons      | lucide-react                                             |
-| Routing    | react-router-dom (`/` + `*` 404 only)                    |
-| Tests      | Vitest + React Testing Library                           |
-| Deploy     | Vercel (primary) · Netlify / GitHub Pages (alternatives) |
+| Concern   | Choice                                                                         |
+| --------- | ------------------------------------------------------------------------------ |
+| Framework | React 18 + Vite + **TypeScript**                                               |
+| Styling   | Tailwind (v4 CSS-first via `@theme`, or v3 config — pick one, stay consistent) |
+| Animation | framer-motion (only animation library)                                         |
+| Icons     | lucide-react                                                                   |
+| Routing   | react-router-dom (`/` + `*` 404 only)                                          |
+| Tests     | Vitest + React Testing Library                                                 |
+| Deploy    | Vercel (primary) · Netlify / GitHub Pages (alternatives)                       |
 
 Allowed dependencies = the list above. Anything else requires my explicit approval.
 

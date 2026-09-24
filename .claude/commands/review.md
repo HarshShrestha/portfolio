@@ -1,6 +1,7 @@
 ---
 description: Review current diff (or last commit) against project conventions
 ---
+
 Review the current uncommitted diff (or last commit if clean) as a strict senior reviewer. Check:
 
 1. **Correctness** — logic errors, missing cleanup (event listeners, rAF, springs), memory leaks in motion primitives.

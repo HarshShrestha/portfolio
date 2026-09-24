@@ -2,6 +2,7 @@
 description: Implement the next unchecked task (or a given task ID) through the full loop
 argument-hint: [task-id e.g. P2.4]
 ---
+
 Target: $ARGUMENTS — if empty, pick the first unchecked task in the earliest incomplete phase of docs/06_TASKS.md.
 
 1. Read CLAUDE.md, docs/06_TASKS.md, and every doc the task references (docs/03 for content, docs/04 for animations, docs/05 for design).
