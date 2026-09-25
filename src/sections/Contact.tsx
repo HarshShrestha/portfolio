@@ -9,8 +9,9 @@ import { Stagger } from '../components/motion/Stagger';
 
 export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 lg:py-32 container mx-auto px-6">
+    <section id="contact" aria-labelledby="contact-heading" className="py-24 lg:py-32 container mx-auto px-6">
       <SectionHeading
+        id="contact-heading"
         number="07"
         title="Contact"
         subtitle="Let's connect and build something extraordinary together."

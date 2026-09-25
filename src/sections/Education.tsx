@@ -9,8 +9,8 @@ export const Education = () => {
   const { school, degree, grade, period, coursework } = profile.education;
 
   return (
-    <section id="education" className="py-24 lg:py-32 container mx-auto px-6">
-      <SectionHeading number="02" title="Education" />
+    <section id="education" aria-labelledby="education-heading" className="py-24 lg:py-32 container mx-auto px-6">
+      <SectionHeading id="education-heading" number="02" title="Education" />
 
       <Reveal direction="up" className="mt-12 max-w-3xl">
         <Timeline>

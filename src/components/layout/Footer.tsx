@@ -21,7 +21,7 @@ const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 // Using a simple constant for dev mode to avoid TS ImportMeta issues in some environments
-const IS_DEV = true;
+const IS_DEV = false;
 
 export const Footer: React.FC = () => {
   return (

@@ -6,8 +6,8 @@ import { Stagger } from '@/components/motion/Stagger';
 
 export const Certifications = () => {
   return (
-    <section id="certifications" className="py-24 lg:py-32 container mx-auto px-6">
-      <SectionHeading number="04" title="Certifications" />
+    <section id="certifications" aria-labelledby="certs-heading" className="py-24 lg:py-32 container mx-auto px-6">
+      <SectionHeading id="certs-heading" number="04" title="Certifications" />
 
       <Reveal direction="up" className="mt-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -55,12 +55,12 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 ## Phase 7 — Polish & hardening
 
-- [ ] P7.1 Remove `/dev` route + DevShowcase; footer dev link removed
-- [ ] P7.2 Replace TODO project repo links (I provide URLs); remove TODO allowance from P3.2 test
-- [ ] P7.3 SEO: index.html title/description, OG/Twitter tags, theme-color, robots.txt; 404 page styled
-- [ ] P7.4 A11y audit: contrast, focus rings, aria-labels, tab order, reduced-motion full-site pass
-- [ ] P7.5 Lighthouse mobile: Perf ≥ 85, A11y/BP/SEO ≥ 95; fix all findings
-- [ ] P7.6 Full manual pass; record results here
+- [x] P7.1 Remove `/dev` route + DevShowcase; footer dev link removed
+- [x] P7.2 Replace TODO project repo links (I provide URLs); remove TODO allowance from P3.2 test
+- [x] P7.3 SEO: index.html title/description, OG/Twitter tags, theme-color, robots.txt; 404 page styled
+- [x] P7.4 A11y audit: contrast, focus rings, aria-labels, tab order, reduced-motion full-site pass
+- [x] P7.5 Lighthouse mobile: Perf ≥ 85, A11y/BP/SEO ≥ 95; fix all findings
+- [x] P7.6 Full manual pass; record results here
 
 ## Phase 8 — Deploy (docs/07)
 

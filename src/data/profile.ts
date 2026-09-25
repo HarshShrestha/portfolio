@@ -68,7 +68,7 @@ export const projects: Project[] = [
       'Engineered Python backend microservices to process LLM prompts, reducing response latency by 50ms using Redis caching.',
       'Developed RESTful and gRPC APIs for frontend-backend communication, ensuring 99.9% uptime and persistent data in PostgreSQL.',
     ],
-    github: 'https://github.com/HarshShrestha', // TODO: real repo
+    github: 'https://github.com/HarshShrestha/agentic-ai-support',
   },
   {
     slug: 'realtime-collab-tool',
@@ -82,7 +82,7 @@ export const projects: Project[] = [
       'Designed microservices architecture with gRPC APIs, improving inter-service communication speed by 40% compared to REST.',
       'Integrated Redis for session management and PostgreSQL for data storage, ensuring scalable and testable code.',
     ],
-    github: 'https://github.com/HarshShrestha', // TODO: real repo
+    github: 'https://github.com/HarshShrestha/realtime-collab-tool',
   },
   {
     slug: 'cloud-ecommerce-backend',
@@ -96,7 +96,7 @@ export const projects: Project[] = [
       'Containerized backend services using Docker and automated deployments via CI/CD pipelines, reducing release time by 30%.',
       'Optimized database load by 40% by implementing Redis caching and enterprise security protocols.',
     ],
-    github: 'https://github.com/HarshShrestha', // TODO: real repo
+    github: 'https://github.com/HarshShrestha/cloud-ecommerce-backend',
   },
 ];
 

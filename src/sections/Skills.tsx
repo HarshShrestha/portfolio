@@ -8,8 +8,8 @@ import { Stagger } from '@/components/motion/Stagger';
 
 export const Skills = () => {
   return (
-    <section id="skills" className="py-24 lg:py-32 container mx-auto px-6">
-      <SectionHeading number="03" title="Technical Skills" />
+    <section id="skills" aria-labelledby="skills-heading" className="py-24 lg:py-32 container mx-auto px-6">
+      <SectionHeading id="skills-heading" number="03" title="Technical Skills" />
 
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Stagger>

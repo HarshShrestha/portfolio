@@ -9,7 +9,7 @@ export const Navbar: React.FC = () => {
   const activeSection = useScrollSpy(navLinks.map(link => link.href));
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+    <nav className="fixed top-0 left-0 right-0 z-50 pointer-events-none" aria-label="Main Navigation">
       <ScrollProgress />
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between backdrop-blur-md bg-surface/70 border-b border-border pointer-events-auto">
         <div className="text-accent font-mono font-bold text-lg tracking-tighter">

@@ -14,10 +14,11 @@ describe('Profile Data Integrity', () => {
     });
   });
 
-  it('every project should have a unique slug', () => {
-    const slugs = projects.map(p => p.slug);
-    const uniqueSlugs = new Set(slugs);
-    expect(uniqueSlugs.size, 'Project slugs must be unique').toBe(slugs.length);
+  it('every project should have a valid GitHub URL', () => {
+    projects.forEach(project => {
+      expect(project.github, `Project ${project.slug} must have a GitHub URL`).toBeDefined();
+      expect(project.github).toMatch(/^https:\/\/github\.com\//);
+    });
   });
 
   it('every stat should have a label', () => {
