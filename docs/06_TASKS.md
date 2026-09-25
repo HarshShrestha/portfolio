@@ -25,8 +25,8 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 ## Phase 3 — Content layer
 
-- [ ] P3.1 `src/data/profile.ts` with types, EXACTLY per docs/03
-- [ ] P3.2 Data-integrity test: every project ≥3 highlights + ≥3 tech + unique slug; stats have labels; no TODO left in final data test (TODOs allowed until P7)
+- [x] P3.1 `src/data/profile.ts` with types, EXACTLY per docs/03
+- [x] P3.2 Data-integrity test: every project ≥3 highlights + ≥3 tech + unique slug; stats have labels; no TODO left in final data test (TODOs allowed until P7)
 - [ ] P3.3 Verify: test green; content diffed against docs/03 line by line
 
 ## Phase 4 — Shell: Background, Navbar, Hero, Footer
