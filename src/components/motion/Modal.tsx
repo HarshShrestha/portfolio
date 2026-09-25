@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence, HTMLMotionProps } from 'framer-motion';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
@@ -17,12 +17,25 @@ export const Modal: React.FC<ModalProps> = ({
   ...props
 }) => {
   const prefersReducedMotion = usePrefersReducedMotion();
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isOpen) {
+      // Store currently focused element and lock scroll
+      previousFocusRef.current = document.activeElement as HTMLElement;
       document.body.style.overflow = 'hidden';
+
+      // Move focus to modal container
+      if (modalRef.current) {
+        modalRef.current.focus();
+      }
     } else {
       document.body.style.overflow = '';
+      // Restore focus to the triggering element
+      if (previousFocusRef.current) {
+        previousFocusRef.current.focus();
+      }
     }
     return () => {
       document.body.style.overflow = '';
@@ -32,6 +45,28 @@ export const Modal: React.FC<ModalProps> = ({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
+
+      if (e.key === 'Tab') {
+        if (!modalRef.current) return;
+
+        const focusableElements = modalRef.current.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        );
+        const firstElement = focusableElements[0] as HTMLElement;
+        const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+        if (e.shiftKey) { // Shift + Tab
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement?.focus();
+          }
+        } else { // Tab
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement?.focus();
+          }
+        }
+      }
     };
 
     if (isOpen) {
@@ -56,13 +91,15 @@ export const Modal: React.FC<ModalProps> = ({
 
           {/* Panel */}
           <motion.div
+            ref={modalRef}
+            tabIndex={-1}
             initial={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
             animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }}
             exit={prefersReducedMotion ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
             role="dialog"
             aria-modal="true"
-            className={`relative z-10 w-full max-w-2xl max-h-[90vh] overflow-hidden bg-surface border border-border rounded-card shadow-2xl ${className}`}
+            className={`relative z-10 w-full max-w-2xl max-h-[90vh] overflow-hidden bg-surface border border-border rounded-card shadow-2xl outline-none ${className}`}
             {...props}
           >
             {children}
