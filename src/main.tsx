@@ -4,11 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import DevShowcase from './pages/DevShowcase';
+import { Background } from './components/layout/Background';
 import './styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <Background />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dev" element={<DevShowcase />} />
