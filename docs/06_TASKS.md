@@ -33,7 +33,7 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 - [x] P4.1 Layout Background: orbs + grid + noise (aria-hidden, fixed, behind content)
 - [x] P4.2 Navbar: sticky glass, anchors, scroll-spy + NavUnderline (A12), ScrollProgress (A5), ThemeToggle
-- [ ] P4.3 Hero: staggered entrance (A2), gradient name, Typewriter roles (A3), CTAs (MagneticButton), ParallaxHero (A17), ScrollCue (A18)
+- [x] P4.3 Hero: staggered entrance (A2), gradient name, Typewriter roles (A3), CTAs (MagneticButton), ParallaxHero (A17), ScrollCue (A18)
 - [ ] P4.4 Stats strip: glass band, 4 Counters (A8)
 - [ ] P4.5 Footer: email, socials, "Built with React + Tailwind", /dev link (dev only)
 - [ ] P4.6 Verify: 360/768/1280 screenshots-checked; reduced-motion pass
