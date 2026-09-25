@@ -26,6 +26,10 @@
   --radius-card: 12px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Light Mode Overrides */
 .light {
   --color-bg: #FAFBFC;
