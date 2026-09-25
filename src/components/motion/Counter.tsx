@@ -4,6 +4,8 @@ import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
 interface CounterProps {
   value: number;
+  suffix?: string;
+  decimals?: number;
   direction?: 'up' | 'down';
   duration?: number;
   className?: string;
@@ -11,6 +13,8 @@ interface CounterProps {
 
 export const Counter: React.FC<CounterProps> = ({
   value,
+  suffix = '',
+  decimals,
   className = '',
 }) => {
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -23,7 +27,9 @@ export const Counter: React.FC<CounterProps> = ({
   });
 
   const displayValue = useTransform(spring, (current) => {
-    return Math.round(current);
+    return decimals !== undefined
+      ? current.toFixed(decimals)
+      : Math.round(current).toString();
   });
 
   useEffect(() => {
@@ -33,12 +39,13 @@ export const Counter: React.FC<CounterProps> = ({
   }, [isInView, value, spring]);
 
   if (prefersReducedMotion) {
-    return <span className={className}>{value}</span>;
+    return <span className={className}>{value}{suffix}</span>;
   }
 
   return (
     <span ref={ref} className={className}>
       <motion.span>{displayValue}</motion.span>
+      {suffix}
     </span>
   );
 };
