@@ -55,7 +55,7 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 ## Phase 7 — Polish & hardening
 
-- [ ] P7.1 Remove `/dev` route + DevShowcase; footer dev link removed
+- [x] P7.1 Remove `/dev` route + DevShowcase; footer dev link removed
 - [ ] P7.2 Replace TODO project repo links (I provide URLs); remove TODO allowance from P3.2 test
 - [ ] P7.3 SEO: index.html title/description, OG/Twitter tags, theme-color, robots.txt; 404 page styled
 - [ ] P7.4 A11y audit: contrast, focus rings, aria-labels, tab order, reduced-motion full-site pass
