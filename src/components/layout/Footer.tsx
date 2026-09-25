@@ -4,7 +4,7 @@ import { Code, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { profile } from '../../data/profile';
 
-const Github = (props: any) => (
+const Github = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M15 22c1.1 0 2-.9 2-2V4a2 2 0 0 0-2-2h-10c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h10z" />
     <path d="M9 12h6" />
@@ -12,7 +12,7 @@ const Github = (props: any) => (
   </svg>
 );
 
-const Linkedin = (props: any) => (
+const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
     <rect x="2" y="9" width="4" height="12" rx="2" />
