@@ -5,6 +5,7 @@ interface SectionHeadingProps {
   number: string;
   subtitle?: string;
   className?: string;
+  id?: string;
 }
 
 export const SectionHeading: React.FC<SectionHeadingProps> = ({
@@ -12,6 +13,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   number,
   subtitle,
   className = '',
+  id,
 }) => {
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
@@ -21,7 +23,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         </span>
         <div className="h-px flex-1 bg-gradient-to-r from-accent/50 to-transparent" />
       </div>
-      <h2 className="text-4xl font-bold text-text tracking-tight">
+      <h2 id={id} className="text-4xl font-bold text-text tracking-tight">
         {title}
       </h2>
       {subtitle && (

@@ -201,8 +201,9 @@ export const Projects: React.FC = () => {
   const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
 
   return (
-    <section id="projects" className="py-24 lg:py-32 container mx-auto px-6">
+    <section id="projects" aria-labelledby="projects-heading" className="py-24 lg:py-32 container mx-auto px-6">
       <SectionHeading
+        id="projects-heading"
         number="06"
         title="Projects"
         subtitle="A curated selection of my engineering work, from agentic AI to scalable backends."

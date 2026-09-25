@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-6">
+    <section id="hero" aria-label="Hero Section" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-6">
       <ParallaxHero>
         <Stagger>
           <div className="flex flex-col items-center text-center z-10">

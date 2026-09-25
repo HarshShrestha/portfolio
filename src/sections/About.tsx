@@ -6,8 +6,8 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 
 export const About = () => {
   return (
-    <section id="about" className="py-24 lg:py-32 container mx-auto px-6">
-      <SectionHeading number="01" title="About Me" />
+    <section id="about" aria-labelledby="about-heading" className="py-24 lg:py-32 container mx-auto px-6">
+      <SectionHeading id="about-heading" number="01" title="About Me" />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mt-12">
         <Reveal direction="up" className="lg:col-span-2">
