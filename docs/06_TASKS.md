@@ -40,11 +40,11 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 ## Phase 5 — Content sections
 
-- [ ] P5.1 About: summary + quick facts (location, email, phone)
-- [ ] P5.2 Education: Timeline (A13) with coursework pills
-- [ ] P5.3 Skills: Marquee rows (A11) + category grid
-- [ ] P5.4 Certifications strip
-- [ ] P5.5 Verify: all reveals fire once; no layout shift on load
+- [x] P5.1 About: summary + quick facts (location, email, phone)
+- [x] P5.2 Education: Timeline (A13) with coursework pills
+- [x] P5.3 Skills: Marquee rows (A11) + category grid
+- [x] P5.4 Certifications strip
+- [x] P5.5 Verify: all reveals fire once; no layout shift on load
 
 ## Phase 6 — Projects + Contact
 
