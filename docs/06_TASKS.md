@@ -64,6 +64,6 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 ## Phase 8 — Deploy (docs/07)
 
-- [x] P8.1 GitHub Actions CI: lint + test + build on every push/PR
+- [ ] P8.1 GitHub Actions CI: lint + test + build on every push/PR
 - [ ] P8.2 Deploy to Vercel; verify prod URL, fonts, animations, 404
 - [ ] P8.3 (Optional) custom domain + real screenshots if I supply any
