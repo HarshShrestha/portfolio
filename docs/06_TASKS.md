@@ -48,9 +48,9 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 ## Phase 6 — Projects + Contact
 
-- [ ] P6.1 Projects grid: TiltCards (A9) with CSS-art headers per accent + Stagger entrance
-- [ ] P6.2 Project modal (A16): full highlights, tech tags, links; Esc/backdrop close; scroll-lock
-- [ ] P6.3 Contact: CopyEmail (A14), phone, socials (magnetic), Download Résumé button → /resume.pdf
+- [x] P6.1 Projects grid: TiltCards (A9) with CSS-art headers per accent + Stagger entrance
+- [x] P6.2 Project modal (A16): full highlights, tech tags, links; Esc/backdrop close; scroll-lock
+- [x] P6.3 Contact: CopyEmail (A14), phone, socials (magnetic), Download Résumé button → /resume.pdf
 - [ ] P6.4 Verify: keyboard opens/closes modal; copy works; focus states visible
 
 ## Phase 7 — Polish & hardening
