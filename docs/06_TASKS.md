@@ -25,18 +25,18 @@ Per task: plan → implement → verify → tick box → commit (`P<phase>.<task
 
 ## Phase 3 — Content layer
 
-- [ ] P3.1 `src/data/profile.ts` with types, EXACTLY per docs/03
-- [ ] P3.2 Data-integrity test: every project ≥3 highlights + ≥3 tech + unique slug; stats have labels; no TODO left in final data test (TODOs allowed until P7)
-- [ ] P3.3 Verify: test green; content diffed against docs/03 line by line
+- [x] P3.1 `src/data/profile.ts` with types, EXACTLY per docs/03
+- [x] P3.2 Data-integrity test: every project ≥3 highlights + ≥3 tech + unique slug; stats have labels; no TODO left in final data test (TODOs allowed until P7)
+- [x] P3.3 Verify: test green; content diffed against docs/03 line by line
 
 ## Phase 4 — Shell: Background, Navbar, Hero, Footer
 
-- [ ] P4.1 Layout Background: orbs + grid + noise (aria-hidden, fixed, behind content)
-- [ ] P4.2 Navbar: sticky glass, anchors, scroll-spy + NavUnderline (A12), ScrollProgress (A5), ThemeToggle
-- [ ] P4.3 Hero: staggered entrance (A2), gradient name, Typewriter roles (A3), CTAs (MagneticButton), ParallaxHero (A17), ScrollCue (A18)
-- [ ] P4.4 Stats strip: glass band, 4 Counters (A8)
-- [ ] P4.5 Footer: email, socials, "Built with React + Tailwind", /dev link (dev only)
-- [ ] P4.6 Verify: 360/768/1280 screenshots-checked; reduced-motion pass
+- [x] P4.1 Layout Background: orbs + grid + noise (aria-hidden, fixed, behind content)
+- [x] P4.2 Navbar: sticky glass, anchors, scroll-spy + NavUnderline (A12), ScrollProgress (A5), ThemeToggle
+- [x] P4.3 Hero: staggered entrance (A2), gradient name, Typewriter roles (A3), CTAs (MagneticButton), ParallaxHero (A17), ScrollCue (A18)
+- [x] P4.4 Stats strip: glass band, 4 Counters (A8)
+- [x] P4.5 Footer: email, socials, "Built with React + Tailwind", /dev link (dev only)
+- [x] P4.6 Verify: 360/768/1280 screenshots-checked; reduced-motion pass
 
 ## Phase 5 — Content sections
 
