@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
+import { HoverTap } from '../motion/HoverTap';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'ghost';
@@ -15,8 +14,6 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ...props
 }) => {
-  const prefersReducedMotion = usePrefersReducedMotion();
-
   const variants = {
     primary: 'bg-accent text-bg font-bold hover:bg-accent/90',
     secondary: 'bg-surface text-text border border-border hover:bg-border',
@@ -30,13 +27,15 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   return (
-    <motion.button
-      whileHover={{ scale: prefersReducedMotion ? 1 : 1.05 }}
-      whileTap={{ scale: prefersReducedMotion ? 1 : 0.95 }}
-      className={`${variants[variant]} ${sizes[size]} ${className} rounded-full transition-all duration-200`}
-      {...(props as Record<string, unknown>)}
+    <HoverTap
+      className={`${variants[variant]} ${sizes[size]} ${className} rounded-full transition-all duration-200 inline-block text-center`}
     >
-      {children}
-    </motion.button>
+      <button
+        className="w-full h-full"
+        {...(props as Record<string, unknown>)}
+      >
+        {children}
+      </button>
+    </HoverTap>
   );
 };
