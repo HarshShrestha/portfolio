@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
 
@@ -16,13 +16,18 @@ export const Marquee: React.FC<MarqueeProps> = ({
   className = '',
 }) => {
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [isPaused, setIsPaused] = useState(false);
 
   if (prefersReducedMotion) {
     return <div className={`flex gap-4 overflow-hidden ${className}`}>{children}</div>;
   }
 
   return (
-    <div className={`overflow-hidden whitespace-nowrap relative ${className}`}>
+    <div
+      className={`overflow-hidden whitespace-nowrap relative ${className}`}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <motion.div
         className="flex gap-4 inline-block"
         animate={{
@@ -35,6 +40,9 @@ export const Marquee: React.FC<MarqueeProps> = ({
             duration: speed,
             ease: "linear",
           },
+        }}
+        style={{
+          animationPlayState: isPaused ? 'paused' : 'running',
         }}
       >
         {/* Duplicate children to ensure seamless loop */}

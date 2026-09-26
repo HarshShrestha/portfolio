@@ -44,10 +44,10 @@ export const Hero: React.FC = () => {
             {/* CTAs */}
             <div className="flex flex-wrap justify-center gap-4">
               <MagneticButton className="px-8 py-3 rounded-full bg-accent text-bg font-bold hover:scale-105 transition-transform">
-                <a href="#projects" className="block w-full h-full">View Projects</a>
+                <a href="#projects" className="block w-full h-full" aria-label="View my projects">View Projects</a>
               </MagneticButton>
               <MagneticButton className="px-8 py-3 rounded-full border border-border text-text hover:bg-surface transition-colors">
-                <a href="#contact" className="block w-full h-full">Contact Me</a>
+                <a href="#contact" className="block w-full h-full" aria-label="Contact me">Contact Me</a>
               </MagneticButton>
             </div>
           </div>

@@ -42,6 +42,8 @@ html {
   --color-accent-3: #7C3AED;
 }
 
+
+
 @layer base {
   body {
     background-color: var(--color-bg);

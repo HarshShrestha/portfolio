@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion';
+import { HoverScale } from '../motion/HoverScale';
 
 interface CardProps {
   children: React.ReactNode;
@@ -15,15 +14,25 @@ export const Card: React.FC<CardProps> = ({
   hoverEffect = true,
   onClick,
 }) => {
-  const prefersReducedMotion = usePrefersReducedMotion();
+  if (!hoverEffect) {
+    return (
+      <div
+        onClick={onClick}
+        className={`${className} p-6 bg-surface/70 backdrop-blur-md border border-border rounded-card transition-colors duration-300`}
+      >
+        {children}
+      </div>
+    );
+  }
 
   return (
-    <motion.div
+    <HoverScale
+      y={-5}
+      borderColor="var(--color-accent)"
+      className={`${className} p-6 bg-surface/70 backdrop-blur-md border border-border rounded-card transition-colors duration-300 cursor-pointer`}
       onClick={onClick}
-      whileHover={hoverEffect && !prefersReducedMotion ? { y: -5, borderColor: 'var(--color-accent)' } : {}}
-      className={`${className} p-6 bg-surface/70 backdrop-blur-md border border-border rounded-card transition-colors duration-300`}
     >
       {children}
-    </motion.div>
+    </HoverScale>
   );
 };
